@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barra de navegación</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body bgcolor="black">
+  <div class="brand-box">
+    <img src="pngwing.com.png" alt="Logo" class="brand-logo">
+    <span class="brand-text">GameZone</span>
+</div>
+
+  <nav class="navbar">
+    <div class="search-container">
+      <input type="text" placeholder="Buscar...">
+    </div>
+    <ul class="menu">
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Apps</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </nav>
+
+<!-- SECCIÓN DEL SOLDADO Y TEXTO -->
+<div class="hero-section">
+
+    <!-- Fondo -->
+    <img src="fondo.png" class="back-img" alt="Fondo">
+
+    <!-- Soldado -->
+    <img src="pngwing.com.png" class="soldado" alt="Soldado">
+
+    <!-- Texto motivador -->
+    <div class="hero-text">
+        <h1>“LA BATALLA EMPIEZA CUANDO NO TE RINDES.”</h1>
+        <p>Prepárate para enfrentarte a tus desafíos.</p>
+    </div>
+
+</div>
+
+<!-- AHORA VIENE EL CARRUSEL (debajo del fondo) -->
+<h2 class="titulo">EXPLORAR POR CATEGORÍA</h2>
+
+<div class="carrusel-container"></div>
+<div class="carrusel">
+    <div class="categoria">
+        <img src="https://www.winp.es/wp-content/uploads/2023/01/Videojuegos-de-deporte-mas-populares-1030x579.png">
+        <div class="overlay">DEPORTES</div>
+    </div>
+
+    <div class="categoria">
+        <img src="https://winblog.s3.amazonaws.com/blog/wp-content/uploads/2023/06/tipos-de-videojuegos-de-disparos-call-of-duty-533x300.jpg">
+        <div class="overlay">ACCIÓN</div>
+    </div>
+
+    <div class="categoria">
+        <img src="https://oem.com.mx/tribunadesanluis/img/13922105/1715931896/BASE_LANDSCAPE/1024/image.webp">
+        <div class="overlay">MUNDO ABIERTOS</div>
+    </div>
+
+    <div class="categoria">
+        <img src="https://sm.ign.com/t/ign_es/screenshot/default/train-sim-world-2020-pc-100-original-steam-d-nq-np-907983-ml_21n6.960.jpg">
+        <div class="overlay">SIMULACIÓN</div>
+    </div>
+
+</div>
+</div>
+
+<div class="slider-container">
+    <div class="slider">
+        <div class="slide active">
+            <img src="https://sm.ign.com/t/ign_es/screenshot/default/train-sim-world-2020-pc-100-original-steam-d-nq-np-907983-ml_21n6.960.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="https://oem.com.mx/tribunadesanluis/img/13922105/1715931896/BASE_LANDSCAPE/1024/image.webp" alt="">
+        </div>
+        <div class="slide">
+            <img src="img3.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Flechas -->
+    <button class="arrow left" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="arrow right" onclick="moveSlide(1)">&#10095;</button>
+
+    <!-- Indicadores -->
+    <div class="dots">
+        <span class="dot active" onclick="goToSlide(0)"></span>
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+    </div>
+</div>
+<h1>esfdfsdddddddddddddddddddddddss dfsfdsfcvfdfxcvcvxdfff
+  dfsfdsfcvfdfxcvcvxdfffsdfsf
+  sdff
+</h1>
+ 
+
+</body>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
