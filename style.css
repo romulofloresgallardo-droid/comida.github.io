@@ -1,0 +1,353 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-size: cover;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.3); /* Transparente */
+  border-radius: 12px;
+  backdrop-filter: blur(10px); /* Efecto desenfoque */
+  position: fixed;
+  z-index: 9999;
+  top: 20px; /*Siempre adelante */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+}
+
+.search-container input {
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  width: 200px;
+  transition: width 0.3s ease;
+}
+
+.search-container input:focus {
+  width: 250px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 10px;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 8px;
+}
+
+.menu li a:hover {
+  background: rgba(255, 255, 255, 0.6);
+  color: #000;
+}
+
+.img-stack {
+  position: relative;
+  margin-top: 0px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 700px;        /* <<< LA ALTURA REAL DEL FONDO */
+  overflow: hidden;     /* evita que el fondo se salga */
+}
+
+/* Imagen detrás */
+.back-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* mantiene el fondo bonito */
+  opacity: 0.7;
+  z-index: 1;
+  left: 0;
+  transform: none;
+}
+
+/* Imagen del soldado */
+.front-img {
+  position: relative;
+  height: 90%;          /* se adapta al contenedor */
+  z-index: 2;
+  transition: transform 0.3s ease;
+  margin-top: 200px;
+}
+
+
+.front-img:hover {
+  transform: translateY(-25px);
+}
+
+.titulo {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 140px;   /* <<--- AQUI SE BAJA */
+}
+
+.carrusel {
+    width: 90%;
+    margin: 40px auto 60px auto;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
+}
+
+/* ========== TARJETAS DEL CARRUSEL ========== */
+
+.categoria {
+    position: relative;
+    min-width: 200px;
+    height: 150px;
+    border-radius: 15px;
+    overflow: hidden;
+    scroll-snap-align: start;
+    cursor: pointer;
+}
+
+.categoria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s ease;
+}
+
+/* CUADRITO AZUL (overlay) */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(71, 70, 71, 0.45);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    transition: 0.4s ease;
+}
+
+/* EFECTO AL PASAR EL MOUSE */
+.categoria:hover img {
+    transform: scale(1.1);
+    filter: brightness(70%);
+}
+
+.categoria:hover .overlay {
+    background: rgba(99, 101, 102, 0.65);
+    letter-spacing: 1px;
+}
+
+.carrusel-container {
+    width: 90%;          /* ancho del carrusel */
+    max-width: 1000px;   /* opcional, para que no se estire demasiado en pantallas grandes */
+    margin: 0 auto;      /* centra horizontalmente */
+}
+
+.carrusel {
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* centra las 4 tarjetas dentro del carrusel */
+    overflow-x: auto;        /* permite scroll si se necesita */
+    scroll-snap-type: x mandatory;
+    padding-bottom: 20px;
+}
+
+/* Opcional: oculta la barra de scroll */
+.carrusel::-webkit-scrollbar {
+    display: none;
+}
+
+.brand-box {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 3px 15px;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.247);
+    backdrop-filter: blur(10px);
+
+    z-index: 99999;
+}
+
+.brand-logo {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.brand-text {
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+/* HERO SECTION */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 600px; /* o ajusta según tu fondo */
+    display: flex;
+    align-items: flex-end; /* coloca todo al fondo */
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Fondo */
+.back-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+/* Soldado */
+.soldado {
+    position: absolute;
+    width: 300px;
+    bottom: 0;
+    left: auto;
+    transform: translateX(-50%);
+    z-index: 5;
+}
+
+/* Texto motivador */
+.hero-text {
+    position: absolute;
+    bottom: 200px;   /* ajusta la distancia desde abajo */
+    left: 50%;      /* a la derecha del soldado */
+    color: white;
+    max-width: 400px;
+    z-index: 10;    /* encima del soldado */
+    opacity: 0;
+    transform: translateX(-50px); /* empieza ligeramente detrás */
+    animation: revealText 1.4s ease-out forwards;
+    animation-delay: 0.8s;
+}
+
+.hero-text h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.hero-text p {
+    font-size: 16px;
+    margin-top: 8px;
+    opacity: 0.9;
+}
+
+/* Animación de aparición */
+@keyframes revealText {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+        filter: blur(4px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Flechas */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    background: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.arrow:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+.left {
+    left: 20px;
+}
+.right {
+    right: 20px;
+}
+
+/* Puntitos */
+.dots {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    display: inline-block;
+    background: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: white;
+    width: 16px;
+    height: 16px;
+}
